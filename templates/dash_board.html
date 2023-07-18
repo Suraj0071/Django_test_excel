@@ -1,0 +1,117 @@
+    <!DOCTYPE html>
+    <html>
+    <head>
+    <title>My Page</title>
+    <style>
+        body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        padding: 20px;
+        font-family: Arial, sans-serif;
+        }
+
+        .container {
+        max-width: 600px;
+        width: 100%;
+        text-align: center;
+        background-color: #f0f0f0;
+        padding: 30px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+        }
+
+        .logo {
+        font-size: 24px;
+        font-weight: bold;
+        }
+
+        #searchContainer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 20px;
+        }
+
+        #searchInput {
+        padding: 8px;
+        width: 200px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        margin-right: 10px;
+        }
+
+        #searchBtn {
+        padding: 8px 16px;
+        border-radius: 5px;
+        border: none;
+        background-color: #4CAF50;
+        color: white;
+        cursor: pointer;
+        }
+
+        #resultContainer {
+        margin-bottom: 20px;
+        }
+
+        #uploadContainer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        }
+
+        #uploadInput {
+        margin-right: 10px;
+        }
+
+        #uploadBtn {
+        padding: 8px 16px;
+        border-radius: 5px;
+        border: none;
+        background-color: #4CAF50;
+        color: white;
+        cursor: pointer;
+        }
+    </style>
+    </head>
+    <body>
+    <div class="container">
+        <header>
+        <div class="logo">Logo</div>
+        <div class="greeting">Hello, [Login Name]</div>
+        </header>
+
+        <button id="customerBtn">Customer</button>
+        <div id="customerDropdown" style="display: none;">
+        <ul>
+            <li>SDWAN</li>
+            <li>BVPN</li>
+            <li>Fortinet</li>
+        </ul>
+        </div>
+
+        
+
+        <div id="resultContainer"></div>
+            <div id="uploadContainer">
+                <form method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <input type="file" name="uploadInput" id="uploadInput">
+                    <button type="submit" id="uploadBtn">Upload File</button>
+                </form>
+            </div>
+            
+
+       
+    </div>
+    </body>
+    </html>
